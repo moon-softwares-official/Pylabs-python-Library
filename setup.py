@@ -1,9 +1,10 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
 setup(
     name="pylabs",
     version="1.0.0",
+    py_modules=["pylabs"],
+    install_requires=["requests"],
     author="Moon Softwares",
-    packages=find_packages(),
-    install_requires=["requests"]
+    description="Python framework made by Moon Softwares"
 )
