@@ -9,6 +9,7 @@ import json
 import requests
 import threading
 import time
+import webbrowser
 
 
 # =========================================
@@ -200,7 +201,7 @@ Made by Moon Softwares
     # SERVER
     # =====================================
 
-    def run(self, host="0.0.0.0", porta=8080):
+    def run(self, host="127.0.0.1", porta=8080):
 
         rotas = self.rotas
 
@@ -236,5 +237,13 @@ Server Running
 http://{host}:{porta}
 =========================================
 """)
+
+        def abrir():
+
+            time.sleep(1)
+
+            webbrowser.open(f"http://{host}:{porta}")
+
+        threading.Thread(target=abrir).start()
 
         servidor.serve_forever()
